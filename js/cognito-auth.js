@@ -63,7 +63,7 @@ var TaskSprint = window.TaskSprint || {};
         }
 
         if(!isPublicPage) {
-            window.location.href = '/sigin.html';
+            window.location.href = '/';
         }
     }
 
