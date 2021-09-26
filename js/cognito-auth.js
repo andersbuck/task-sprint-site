@@ -43,9 +43,29 @@ var TaskSprint = window.TaskSprint || {};
                 }
             });
         } else {
+            optionallyRedirect();
             resolve(null);
         }
     });
+
+
+    /**
+     * Redirect to signin if the user is on a page that is not public. 
+     */
+    function optionallyRedirect() {
+        let isPublicPage = false;
+        for (let index = 0; index < _config.publicPages.pages.length; index++) {
+            const page = _config.publicPages.pages[index];
+            if (window.location.href.includes(page)) {
+                isPublicPage = true;
+                break;
+            }
+        }
+
+        if(!isPublicPage) {
+            window.location.href = '/sigin.html';
+        }
+    }
 
 
     /*

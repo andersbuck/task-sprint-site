@@ -6,5 +6,13 @@ window._config = {
     },
     api: {
         invokeUrl: 'https://mj5fvpgdq3.execute-api.us-east-1.amazonaws.com/prod' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod',
+    },
+    publicPages: {
+        pages: [
+            "index.html",
+            "register.html",
+            "signin.html",
+            "verify.html"
+        ]
     }
 };
