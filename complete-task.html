@@ -13,6 +13,11 @@
 
     <section>
         <h1>Complete Task</h1>
+        <label for="tasks">Choose a task:</label>
+        <select name="tasks" id="tasks">
+            <option>Select one</option>
+        </select>
+        <input type="submit" id="completeTaskSubmit" value="Complete">
     </section>    
 
     <script src="js/vendor/jquery-3.1.0.js"></script>
@@ -20,6 +25,6 @@
     <script src="js/vendor/aws-cognito-sdk.min.js"></script>
     <script src="js/vendor/amazon-cognito-identity.min.js"></script>
     <script src="js/config.js"></script>
-    <script src="js/cognito-auth.js"></script>  
+    <script src="js/fetch-tasks.js"></script>  
 </body>
 </html>
