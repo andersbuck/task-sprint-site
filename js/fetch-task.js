@@ -34,11 +34,12 @@ var TaskSprint = window.TaskSprint || {};
     }
 
     function completeRequest(result) {
-        var select = document.getElementById("tasks"); 
+        let select = document.getElementById("tasks"); 
 
-        for(var i = 0; i < result.data.length; i++) {
-            var opt = result.data[i];
-            var el = document.createElement("option");
+        let items = results.tasks.Items;
+        for(let i = 0; i < items.length; i++) {
+            let opt = items[i];
+            let el = document.createElement("option");
             el.textContent = opt.name;
             el.value = opt.taskId;
             select.appendChild(el);
