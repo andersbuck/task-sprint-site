@@ -3,16 +3,18 @@ var TaskSprint = window.TaskSprint || {};
 (function fetchTasksScopeWrapper($) {
     var authToken;
 
-    TaskSprint.authToken.then(function setAuthToken(token) {
-        if (token) {
-            authToken = token;
-        } else {
+    if (!_config.isLocalEnv ) {
+        TaskSprint.authToken.then(function setAuthToken(token) {
+            if (token) {
+                authToken = token;
+            } else {
+                window.location.href = '/signin.html';
+            }
+        }).catch(function handleTokenError(error) {
+            alert(error);
             window.location.href = '/signin.html';
-        }
-    }).catch(function handleTokenError(error) {
-        alert(error);
-        window.location.href = '/signin.html';
-    });
+        });
+    }
 
     function fetchTasks() {
         $.ajax({
@@ -40,7 +42,7 @@ var TaskSprint = window.TaskSprint || {};
             el.textContent = opt.name;
             el.value = opt.taskId;
             select.appendChild(el);
-        }​
+        }
     }
 
     // Register click handler for #request button

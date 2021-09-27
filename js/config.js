@@ -15,5 +15,5 @@ window._config = {
             "verify.html"
         ]
     },
-    notLocalEnv: !window.location.href.includes('file://')
+    isLocalEnv: window.location.href.includes('file://')
 };
