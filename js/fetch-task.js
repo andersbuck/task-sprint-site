@@ -36,7 +36,7 @@ var TaskSprint = window.TaskSprint || {};
     function completeRequest(result) {
         let select = document.getElementById("tasks"); 
 
-        let items = results.tasks.Items;
+        let items = result.tasks.Items;
         for(let i = 0; i < items.length; i++) {
             let opt = items[i];
             let el = document.createElement("option");
