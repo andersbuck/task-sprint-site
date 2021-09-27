@@ -53,17 +53,19 @@ var TaskSprint = window.TaskSprint || {};
      * Redirect to signin if the user is on a page that is not public. 
      */
     function optionallyRedirect() {
-        let isPublicPage = false;
-        for (let index = 0; index < _config.publicPages.pages.length; index++) {
-            const page = _config.publicPages.pages[index];
-            if (window.location.href.includes(page)) {
-                isPublicPage = true;
-                break;
+        if(_config.notLocalEnv) {
+            let isPublicPage = false;
+            for (let index = 0; index < _config.publicPages.pages.length; index++) {
+                const page = _config.publicPages.pages[index];
+                if (window.location.href.includes(page)) {
+                    isPublicPage = true;
+                    break;
+                }
             }
-        }
 
-        if(!isPublicPage) {
-            window.location.href = '/';
+            if(!isPublicPage) {
+                window.location.href = '/';
+            }
         }
     }
 

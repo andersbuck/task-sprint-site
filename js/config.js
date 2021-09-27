@@ -14,5 +14,6 @@ window._config = {
             "signin.html",
             "verify.html"
         ]
-    }
+    },
+    notLocalEnv: !window.location.href.includes('file://')
 };
